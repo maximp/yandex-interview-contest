@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build File",
+            "type": "shell",
+            "command": "if [ -f ${fileBasenameNoExtension}.makeopts ]; then cat ${fileBasenameNoExtension}.makeopts | tr '\n' ' ' | xargs make ${fileBasenameNoExtension}; else make ${fileBasenameNoExtension}; fi",
+            "args": [],
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build & Run Debug Tests",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "--no-print-directory",
+                "test-debug"
+            ],
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "test",
+                "isDefault": false,
+                "test": true
+            }
+        }
+    ]
+}
