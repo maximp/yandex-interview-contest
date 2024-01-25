@@ -21,5 +21,5 @@ int main()
     int n = 0;
     cin >> n;
     gen(n, 0, 0, "");
-	return 0;
+    return 0;
 }
